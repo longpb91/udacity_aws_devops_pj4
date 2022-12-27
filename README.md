@@ -51,14 +51,15 @@ source .devops/bin/activate
 * Use Command + C to stop the container.
 
 2. Setup and Configure Kubernetes locally:
-* Get the minikube: `curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`
-* Install the minikube: `sudo install minikube-linux-amd64 /usr/local/bin/minikube`
-* Run the kubernetes: `./run_kubernetes.sh`
-* In another terminal tab, the prediction is made by running: `./make_prediction.sh`
-* To stop the cluster: `minikube stop`
-* To delete the cluster: `minikube delete`
+* A guilde to install Kubernetes: https://kubernetes.io/docs/tasks/tools/#install-kubectl-on-linux
+* A guilde to install minikube: https://minikube.sigs.k8s.io/docs/start/
 
 3. Create Flask app in Container
 * Build image and add a descriptive tag: `docker build -t <name of the image>: <tag> .`
 * Upload to docker hub: `./upload_docker.sh`
 
+4. Run via kubectl
+* Run the kubernetes: `./run_kubernetes.sh`
+* In another terminal tab, the prediction is made by running: `./make_prediction.sh`
+* To stop the cluster: `minikube stop`
+* To delete the cluster: `minikube delete`
